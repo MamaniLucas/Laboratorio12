@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Laboratorio12.Models
 {
-    public class Taskmodels
+    public class TaskModel
     {
         //public 
         public string Title { get; set; }
