@@ -13,6 +13,16 @@ namespace Laboratorio12
         public MainPage()
         {
             InitializeComponent();
+
+            List<string> myList = new List<string>
+            {
+
+               "Lunes",
+               "Martes",
+               "Miercoles",
+               "Jueves",
+               
+            myListView.ItemSource = myList;
         }
     }
 }
