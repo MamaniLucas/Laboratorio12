@@ -10,7 +10,7 @@
         
         
 
-        <ListView x:Name="myListView">
+        <ListView x:Name="myListView" SeparatorColor="Gray">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
