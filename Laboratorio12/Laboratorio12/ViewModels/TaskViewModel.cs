@@ -11,27 +11,13 @@ namespace Laboratorio12.ViewModels
     public class TaskViewModel : ViewModelsBasic
     {
 
-        //definen las propiedades 
-        //de la vista xaml.c al tipo lista
-        //tipo de coleccion , porpiedad de tipo task.
-        // lo  mismo que title set y get
-
-        //que propiedades son 
-        //modelos=objetos de la base de datos
-        //modelo que simula la infor de la bd
-        //rn odel creo una clase de tipo taskmodels
-
-
-
-        //Configura el ListView para que muestre el título y la descripción de cada tarea.
-
 
         public int Id { get; set; }
         public string Description { get; set; }
-        public bool iscompleted { get; set; }
+        public bool IsCompleted { get; set; } // Cambié "iscompleted" a "IsCompleted" para seguir las convenciones de nomenclatura de C#
 
-        String title;
-        public String Title
+        private string title;
+        public string Title
         {
             get { return title; }
             set
@@ -44,32 +30,28 @@ namespace Laboratorio12.ViewModels
             }
         }
 
-
-
         public ICommand Save { protected set; get; }
         public ICommand Get { protected set; get; }
 
-        private List<Taskmodels> Taskmodels;
-          
+        private List<TaskModel> taskModels; //nombre del modelo.
+
+        public ObservableCollection<TaskModel> Tasks { get; set; } // propiedad Tasks
+
         public TaskViewModel()
         {
-            Tasks= new ObservableCollection<Taskmodels>();
-            Taskmodels = new List<Taskmodels>();
+            Tasks = new ObservableCollection<TaskModel>();
+            taskModels = new List<TaskModel>();
             Save = new Command(() =>
             {
-
-                Taskmodel task = new TaskModel();
+                TaskModel task = new TaskModel(); /
                 task.Title = this.Title;
-                TaskViewModel.Add(task);
+                taskModels.Add(task);
             });
+
             Get = new Command(() =>
             {
-
-                Tasks = new ObservavleCollection<TaskModel>(Tas)
-
-
-
+                Tasks = new ObservableCollection<TaskModel>(taskModels);
             });
-
+        }
     }
 }
