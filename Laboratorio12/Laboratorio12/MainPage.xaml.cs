@@ -14,13 +14,10 @@ namespace Laboratorio12
         {
             InitializeComponent();
 
-            List<string> myList = new List<string>
+            List<TaskModel> myList = new List<TaskModel>
             {
 
-               "Lunes",
-               "Martes",
-               "Miercoles",
-               "Jueves",
+               new TaskModel{Title="Monday", Description="¡Listen Friday I'm In Love! by the cure", IsCompleted="True"}
                
             myListView.ItemSource = myList;
         }
